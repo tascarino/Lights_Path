@@ -1,0 +1,17 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1727213952
+icon.svg::CompressedTexture2D::1091483225299702663::1726599861::1726599880::1::::<><>::
+::res://assets/::1726605651
+WizardSpriteSheet.png::CompressedTexture2D::7535243571293909568::1726600036::1726605651::1::::<><>::
+::res://assets/Terrain_Tileset_Assetpack/::1726605651
+Dirt.png::CompressedTexture2D::1381565197837013923::1726605326::1726605651::1::::<><>::
+Grass.png::CompressedTexture2D::5204023215090168900::1726605326::1726605651::1::::<><>::
+Lava.png::CompressedTexture2D::7244061850455381656::1726605326::1726605651::1::::<><>::
+Minerals.png::CompressedTexture2D::4557051309381987715::1726605326::1726605651::1::::<><>::
+Sand.png::CompressedTexture2D::2071725112815457645::1726605326::1726605651::1::::<><>::
+Snow.png::CompressedTexture2D::3634950810390063810::1726605326::1726605651::1::::<><>::
+Stone.png::CompressedTexture2D::7614490891212590839::1726605326::1726605651::1::::<><>::
+::res://Puzzle-Wiz/::1727213526
+::res://scenes/::1726607382
+main.tscn::PackedScene::7128303562245485115::1726607382::0::1::::<><>::uid://dgqrs1w7trwol::::res://assets/Terrain_Tileset_Assetpack/Stone.png
+::res://scripts/::1726605693
