@@ -5,4 +5,5 @@
 
 ### 2024-09-24 - 2 hr 50 min: Created Repo
 * Figured out how to create a repo
-* Ran into a couple of "side quests" while doing so, including making an SSN
+* Ran into a couple of "side quests" while doing so, including meeding to make an SSN
+* Uploaded base project onto itch.io
