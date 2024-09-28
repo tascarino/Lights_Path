@@ -3,6 +3,9 @@
 * [Trello Board] (https://trello.com/b/BmuAuS76/game-design-final-project)
 * [Proposal] (ProjectProposal.png)
 
+### 2024-09-28 - 1hr: Configured Movement
+* Got top down movement implemented into Godot
+  
 ### 2024-09-24 - 2hr 50min: Created Repo
 * Figured out how to create a repo
 * Ran into a couple of "side quests" while doing so, including meeding to make an SSN
