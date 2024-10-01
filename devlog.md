@@ -2,7 +2,7 @@
 * Ran into issue with Collision layers when making boundaries
 * Managed to resolve issue
 * Started researching others' code in regards to lasers for the beams
-* Started testing code from (https://www.youtube.com/watch?v=CSLh97k8Gus&list=PLdMwc1hRlXvMDzWSmyfzGIcyaSd7BNH-U&index=10&t=15s)  
+* Started testing code from (https://www.youtube.com/watch?v=CSLh97k8Gus&list=PLdMwc1hRlXvMDzWSmyfzGIcyaSd7BNH-U&index=10&t=15s) as a base to change later on
 ### 2024-09-28 - 1hr: Configured Movement
 * Got top down movement implemented into Godot
   
