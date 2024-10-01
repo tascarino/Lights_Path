@@ -1,3 +1,8 @@
+### 2024-10-01 - 3hr 20min: Set Boundaries and Started Beam Configuration
+* Ran into issue with Collision layers when making boundaries
+* Managed to resolve issue
+* Started researching others' code in regards to lasers for the beams
+* Started testing code from (https://www.youtube.com/watch?v=CSLh97k8Gus&list=PLdMwc1hRlXvMDzWSmyfzGIcyaSd7BNH-U&index=10&t=15s)  
 ### 2024-09-28 - 1hr: Configured Movement
 * Got top down movement implemented into Godot
   
