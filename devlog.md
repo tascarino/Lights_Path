@@ -3,7 +3,7 @@
   
 ### 2024-09-24 - 2hr 50min: Created Repo
 * Figured out how to create a repo
-* Ran into a couple of "side quests" while doing so, including meeding to make an SSN
+* Ran into a couple of "side quests" while doing so, including needing to make an SSN
 * Uploaded base project onto itch.io
 * STARTED: Making the base of top-down rooms/features
 
