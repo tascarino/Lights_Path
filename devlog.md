@@ -1,11 +1,11 @@
-### 2024-10-08 - 3hr: Beam Config
+### 2024-10-08 - 4hr: Beam Config
 * Started testing code
 * Ran into bug in main program; game freezes on open
 * Created separate project to continue working on the mechanic; saving time from not immediately solving issue in main game
 * Created working beam that collides/stops with walls (using mouse location to control to start with)
 * Fixed freezing issue
 
-### 2024-10-07 - 1hr: Beam Config
+### 2024-10-07 - 2hr: Beam Config
 * More research on Raycasts
 * Found better base code (https://www.youtube.com/watch?v=Hax0ZkIi7fM&t=271s)
   
@@ -14,6 +14,7 @@
 * Managed to resolve issue
 * Started researching others' code in regards to lasers for the beams
 * Started testing code from (https://www.youtube.com/watch?v=CSLh97k8Gus&list=PLdMwc1hRlXvMDzWSmyfzGIcyaSd7BNH-U&index=10&t=15s) as a base to change later on
+  
 ### 2024-09-28 - 1hr: Configured Movement
 * Got top down movement implemented into Godot
   
