@@ -1,12 +1,9 @@
-* Name: Taylor Ascarino
-* [Trello Board](https://trello.com/invite/b/66f32350371d02b00c156d44/ATTIe6f66fa1532698b14ccb846918581517429A37E3/taylor-ascarino-game-design-final-project)
-* [Proposal](proposal.pdf)
-  
-### 2024-10-08 - TBD: Beam Config
+### 2024-10-08 - 3hr: Beam Config
 * Started testing code
 * Ran into bug in main program; game freezes on open
 * Created separate project to continue working on the mechanic; saving time from not immediately solving issue in main game
 * Created working beam that collides/stops with walls (using mouse location to control to start with)
+* Fixed freezing issue
 
 ### 2024-10-07 - 1hr: Beam Config
 * More research on Raycasts
