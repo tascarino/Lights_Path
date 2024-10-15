@@ -1,3 +1,14 @@
+### 2024-10-15 - TBD: Continuing Reflection Config
+* Continuing work from last log
+* Running into issues implementing this, mainly due to limited knowledge on Godot
+
+### 2024-10-11 - 2hr: Started Working on Reflections
+* Started testing ways to reflect the beams
+* Current Idea: Invisible beams already set at each prism; if prism collided with, beam becomes visible, simulating reflection
+
+### 2024-10-10 - 1hr: Added prisms
+* Added prisms into the main game that collide with the beam, stopping it
+
 ### 2024-10-08 - 4hr: Beam Config
 * Started testing code
 * Ran into bug in main program; game freezes on open
