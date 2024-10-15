@@ -1,6 +1,8 @@
-### 2024-10-15 - TBD: Continuing Reflection Config
+### 2024-10-15 - 5hr: Continuing Reflection Config
 * Continuing work from last log
 * Running into issues implementing this, mainly due to limited knowledge on Godot
+* Got visibility to kind of work; however, reflected beam becomes visible too early, and have not figured out how to make beam hidden when not colliding
+* May rework beam scene as a whole, trying to use _draw_line that I could not previously figure out.
 
 ### 2024-10-11 - 2hr: Started Working on Reflections
 * Started testing ways to reflect the beams
