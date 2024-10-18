@@ -142,11 +142,13 @@ zoom = Vector2(4, 4)
 [node name="Reflectors" type="Node" parent="."]
 
 [node name="Reflector" parent="Reflectors" instance=ExtResource("4_3yk87")]
-position = Vector2(28, -4)
+position = Vector2(26, -36)
+rotation = -0.739357
 scale = Vector2(1.6481, 1.6481)
 
 [node name="Reflector2" parent="Reflectors" instance=ExtResource("4_3yk87")]
-position = Vector2(-32, -29)
+position = Vector2(-38, -8)
+rotation = 3.14159
 scale = Vector2(1.648, 1.648)
 
 [node name="RoomBoundaries" type="Node" parent="."]
@@ -168,12 +170,12 @@ position = Vector2(-5, 68)
 scale = Vector2(6.8, 0.4)
 
 [node name="Beam" parent="." instance=ExtResource("4_v6yto")]
-position = Vector2(-2, 18)
+position = Vector2(0, 24)
 scale = Vector2(0.328415, 0.328415)
 
 [node name="StartPrism" type="Sprite2D" parent="."]
-position = Vector2(-2, 18)
-scale = Vector2(1.648, 1.648)
+position = Vector2(1, 23)
+scale = Vector2(1.66585, 1.72424)
 texture = ExtResource("7_o34aq")
 region_enabled = true
 region_rect = Rect2(73, 16, 7, 8)

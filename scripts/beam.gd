@@ -1,7 +1,9 @@
 extends Node2D
 
-const maxrange = 5000
-var based_width = 10
+var max_bounces = 10
+
+@onready var raycast: RayCast2D = $RayCast2D
+@onready var line: Line2D = $Line2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,19 +11,54 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Line2D.width = based_width
+	line.clear_points()
+
+	line.add_point(Vector2.ZERO)
 	
-	var mouse_position = get_local_mouse_position()
-	var max_cast_to = mouse_position.normalized() * maxrange
-	$RayCast2D.target_position = max_cast_to
+	# Define initial raycast
+	raycast.global_position = line.global_position
+	raycast.target_position = (get_global_mouse_position()-line.global_position).normalized()*1000
+	raycast.force_raycast_update()
 	
-	if $RayCast2D.is_colliding():
-		var collider = $RayCast2D.get_collider()
-		#if collider.is_reflector():
-			#collider.set_beam_visible()
-		$Reference.global_position = $RayCast2D.get_collision_point()
-		$Line2D.set_point_position(1, $Line2D.to_local($Reference.global_position))
-	else:
-		$Reference.global_position = $RayCast2D.target_position
-		$Line2D.points[1] = $Reference.global_position
+	var previous = null 
+	var bounces = 0
+	
+	while true:
+		if not raycast.is_colliding():
+			var point = raycast.global_position + raycast.target_position
+			line.add_point(line.to_local(point))
+			break
+			
+		var collider = raycast.get_collider()
+		var point = raycast.get_collision_point()
 		
+		line.add_point(line.to_local(point))
+		
+		if not collider.is_in_group("Reflectors"):
+			break
+		
+		var normal = raycast.get_collision_normal()
+		
+		if normal == Vector2.ZERO:
+			break
+		
+		# Update collisions
+		if previous != null:
+			previous.collision_mask = 3
+			previous.collision_layer = 3
+		previous = collider
+		previous.collision_mask = 0
+		previous.collision_layer = 0
+		
+		# Update raycast
+		raycast.global_position = point
+		raycast.target_position = raycast.target_position.bounce(normal)
+		raycast.force_raycast_update()
+		
+		bounces += 1
+		if bounces >= max_bounces:
+			break
+		
+	if previous != null:
+		previous.collision_mask = 3
+		previous.collision_layer = 3

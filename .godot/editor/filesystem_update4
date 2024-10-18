@@ -1,9 +1,7 @@
 res://scenes/beam.tscn
-res://scripts/reflector.gd
 res://scripts/beam.gd
 res://scenes/main.tscn
+res://scenes/reflector.tscn
 res://scenes/player.tscn
 res://scenes/boundaries.tscn
-res://scenes/reflector.tscn
 res://scenes/wheel.tscn
-res://scripts/wheel.gd
