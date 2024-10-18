@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2qispohwt3tc"]
+
+[ext_resource type="Texture2D" uid="uid://b56p77qjb7rtj" path="res://assets/Terrain_Tileset_Assetpack/Minerals.png" id="1_3dmu2"]
+[ext_resource type="Script" path="res://scripts/reflector.gd" id="1_c8ob4"]
+[ext_resource type="PackedScene" uid="uid://bkfbws3s8oket" path="res://scenes/beam.tscn" id="3_g4awi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj73i"]
+size = Vector2(2, 5)
+
+[node name="Reflector" type="StaticBody2D"]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_c8ob4")
+
+[node name="Beam" parent="." instance=ExtResource("3_g4awi")]
+visible = false
+scale = Vector2(0.350736, 0.350736)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_mj73i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3dmu2")
+region_enabled = true
+region_rect = Rect2(73, 24, 6, 8)

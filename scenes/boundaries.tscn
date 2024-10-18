@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://btejccf2bjkbp"]
+
+[ext_resource type="Script" path="res://scripts/boundaries.gd" id="1_ewdw1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cx8e"]
+
+[node name="Boundaries" type="StaticBody2D"]
+script = ExtResource("1_ewdw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5cx8e")
