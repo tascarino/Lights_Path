@@ -16,13 +16,16 @@ texture = ExtResource("1_xfdgh")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(63, 0)
+collision_mask = 2
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 58, 0)
 default_color = Color(0.785864, 0.861808, 0.984442, 1)
 
 [node name="Area2D" type="Area2D" parent="Line2D"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/Area2D"]
+visible = false
 position = Vector2(29, 0)
 shape = SubResource("RectangleShape2D_dlyk6")

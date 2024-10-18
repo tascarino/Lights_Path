@@ -168,11 +168,11 @@ position = Vector2(-5, 68)
 scale = Vector2(6.8, 0.4)
 
 [node name="Beam" parent="." instance=ExtResource("4_v6yto")]
-position = Vector2(-7.10543e-15, 28)
+position = Vector2(-2, 18)
 scale = Vector2(0.328415, 0.328415)
 
 [node name="StartPrism" type="Sprite2D" parent="."]
-position = Vector2(1, 28)
+position = Vector2(-2, 18)
 scale = Vector2(1.648, 1.648)
 texture = ExtResource("7_o34aq")
 region_enabled = true

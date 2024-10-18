@@ -41,3 +41,24 @@ shape = SubResource("RectangleShape2D_y1mu1")
 [node name="Right" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(10, 0)
 shape = SubResource("RectangleShape2D_lmhby")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_twvbh")
+
+[node name="Down" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_ophp2")
+
+[node name="Left" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-10, 0)
+shape = SubResource("RectangleShape2D_y1mu1")
+
+[node name="Right" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_lmhby")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

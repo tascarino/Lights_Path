@@ -14,8 +14,10 @@ func _process(_delta: float) -> void:
 func is_reflector():
 	return true
 
+
 func set_beam_visible():
 	beam.visible = true
 
 func set_beam_hidden():
 	beam.visible = false
+	

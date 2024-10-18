@@ -17,8 +17,8 @@ func _process(delta: float) -> void:
 	
 	if $RayCast2D.is_colliding():
 		var collider = $RayCast2D.get_collider()
-		if collider.is_reflector():
-			collider.set_beam_visible()
+		#if collider.is_reflector():
+			#collider.set_beam_visible()
 		$Reference.global_position = $RayCast2D.get_collision_point()
 		$Line2D.set_point_position(1, $Line2D.to_local($Reference.global_position))
 	else:

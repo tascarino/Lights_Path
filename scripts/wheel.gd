@@ -5,22 +5,26 @@ extends Node2D
 
 signal wheel_rotated(rotation: float)
 
-@onready var collision_body: CharacterBody2D = $CharacterBody2D  # Reference to the prong body
+var player_touching: bool = false  # Tracks if player is in contact
 
-# Called every physics frame.
+# Rotate the wheel if the player is touching it.
 func _physics_process(delta: float) -> void:
-	if is_player_touching():
+	if player_touching:
 		rotate_wheel(delta)
 
-# Rotate the wheel and emit the new rotation.
+# Rotate the wheel and emit the rotation signal.
 func rotate_wheel(delta: float) -> void:
 	var rotation_delta = rotation_direction * rotation_speed * delta
 	rotation_degrees += rotation_delta
 	emit_signal("wheel_rotated", rotation_degrees)
 
-# Checks if the player is colliding with the wheel using move_and_collide().
-func is_player_touching() -> bool:
-	var collision = collision_body.move_and_collide(Vector2.ZERO)  # Check for collision
-	if collision and collision.get_collider().name == "Player":
-		return true
-	return false
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name =="Player":
+		player_touching = true
+		print("Player started touching the wheel")
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.name =="Player":
+		player_touching = false
+		print("Player stopped touching the wheel")
