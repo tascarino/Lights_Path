@@ -1,10 +1,24 @@
-### 2024-10-08 - TBD: Beam Config
+### 2024-10-15 - 5hr: Continuing Reflection Config
+* Continuing work from last log
+* Running into issues implementing this, mainly due to limited knowledge on Godot
+* Got visibility to kind of work; however, reflected beam becomes visible too early, and have not figured out how to make beam hidden when not colliding
+* May rework beam scene as a whole, trying to use _draw_line that I could not previously figure out.
+
+### 2024-10-11 - 2hr: Started Working on Reflections
+* Started testing ways to reflect the beams
+* Current Idea: Invisible beams already set at each prism; if prism collided with, beam becomes visible, simulating reflection
+
+### 2024-10-10 - 1hr: Added prisms
+* Added prisms into the main game that collide with the beam, stopping it
+
+### 2024-10-08 - 4hr: Beam Config
 * Started testing code
 * Ran into bug in main program; game freezes on open
 * Created separate project to continue working on the mechanic; saving time from not immediately solving issue in main game
 * Created working beam that collides/stops with walls (using mouse location to control to start with)
+* Fixed freezing issue
 
-### 2024-10-07 - 1hr: Beam Config
+### 2024-10-07 - 2hr: Beam Config
 * More research on Raycasts
 * Found better base code (https://www.youtube.com/watch?v=Hax0ZkIi7fM&t=271s)
   
@@ -13,6 +27,7 @@
 * Managed to resolve issue
 * Started researching others' code in regards to lasers for the beams
 * Started testing code from (https://www.youtube.com/watch?v=CSLh97k8Gus&list=PLdMwc1hRlXvMDzWSmyfzGIcyaSd7BNH-U&index=10&t=15s) as a base to change later on
+  
 ### 2024-09-28 - 1hr: Configured Movement
 * Got top down movement implemented into Godot
   
