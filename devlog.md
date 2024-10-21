@@ -1,5 +1,6 @@
 ### 2024-10-21 - TBD: Puzzle Completion Indicator and Wheel Implementation
 * Created "Wall" and "EndPrism" scenes
+* Updated room layout (temporary) so the level is completable without turning the mirrors
 * "Installed" a light in the main level that lights up upon the beam hitting the end prism
   
 ### 2024-10-18 - 2hr: Figured out reflection
