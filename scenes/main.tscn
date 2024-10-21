@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8taeawg7j3nj"]
+[gd_scene load_steps=13 format=3 uid="uid://c8taeawg7j3nj"]
 
 [ext_resource type="Texture2D" uid="uid://dgqrs1w7trwol" path="res://assets/Terrain_Tileset_Assetpack/Stone.png" id="1_c3mw8"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jyuj2"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://btejccf2bjkbp" path="res://scenes/boundaries.tscn" id="4_jdksy"]
 [ext_resource type="PackedScene" uid="uid://bkfbws3s8oket" path="res://scenes/beam.tscn" id="4_v6yto"]
 [ext_resource type="Texture2D" uid="uid://b56p77qjb7rtj" path="res://assets/Terrain_Tileset_Assetpack/Minerals.png" id="7_o34aq"]
+[ext_resource type="PackedScene" uid="uid://divsf3mc1rjvf" path="res://scenes/wall.tscn" id="8_khi6k"]
+[ext_resource type="PackedScene" uid="uid://c6grkd5xq46d5" path="res://scenes/end_prism.tscn" id="9_7xe27"]
+[ext_resource type="PackedScene" uid="uid://btcbt4fhxfbmt" path="res://scenes/light.tscn" id="10_7xdl5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0fck"]
 texture = ExtResource("1_c3mw8")
@@ -133,7 +136,7 @@ layer_1/tile_data = PackedInt32Array(-589832, 131072, 0, -589831, 131072, 0, -58
 [node name="Player" parent="." instance=ExtResource("3_napjo")]
 z_index = 1
 position = Vector2(-51, 60)
-scale = Vector2(0.645509, 0.645509)
+scale = Vector2(0.579045, 0.579045)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -4)
@@ -142,14 +145,14 @@ zoom = Vector2(4, 4)
 [node name="Reflectors" type="Node" parent="."]
 
 [node name="Reflector" parent="Reflectors" instance=ExtResource("4_3yk87")]
-position = Vector2(26, -36)
-rotation = -0.739357
-scale = Vector2(1.6481, 1.6481)
+position = Vector2(46, -25)
+rotation = -0.595016
+scale = Vector2(2.11688, 2.11688)
 
 [node name="Reflector2" parent="Reflectors" instance=ExtResource("4_3yk87")]
-position = Vector2(-38, -8)
-rotation = 3.14159
-scale = Vector2(1.648, 1.648)
+position = Vector2(-32, -12)
+rotation = 2.65546
+scale = Vector2(2.20487, 2.20487)
 
 [node name="RoomBoundaries" type="Node" parent="."]
 
@@ -170,12 +173,21 @@ position = Vector2(-5, 68)
 scale = Vector2(6.8, 0.4)
 
 [node name="Beam" parent="." instance=ExtResource("4_v6yto")]
-position = Vector2(0, 24)
+position = Vector2(-0.169525, 43.897)
 scale = Vector2(0.328415, 0.328415)
 
 [node name="StartPrism" type="Sprite2D" parent="."]
-position = Vector2(1, 23)
+position = Vector2(0.830475, 42.897)
 scale = Vector2(1.66585, 1.72424)
 texture = ExtResource("7_o34aq")
 region_enabled = true
 region_rect = Rect2(73, 16, 7, 8)
+
+[node name="Wall" parent="." instance=ExtResource("8_khi6k")]
+position = Vector2(0, 3)
+
+[node name="EndPrism" parent="." instance=ExtResource("9_7xe27")]
+position = Vector2(1, -46)
+
+[node name="Light" parent="." instance=ExtResource("10_7xdl5")]
+position = Vector2(0, -70)

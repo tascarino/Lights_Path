@@ -5,12 +5,19 @@ var max_bounces = 10
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var line: Line2D = $Line2D
 
+func level_complete():
+	var collider = raycast.get_collider()
+	if collider != null:
+		if collider.is_in_group("EndPrism"):
+			return true
+	return false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	line.clear_points()
 
 	line.add_point(Vector2.ZERO)
@@ -25,6 +32,7 @@ func _process(delta: float) -> void:
 	
 	while true:
 		if not raycast.is_colliding():
+			@warning_ignore("confusable_local_declaration")
 			var point = raycast.global_position + raycast.target_position
 			line.add_point(line.to_local(point))
 			break
@@ -34,7 +42,7 @@ func _process(delta: float) -> void:
 		
 		line.add_point(line.to_local(point))
 		
-		if not collider.is_in_group("Reflectors"):
+		if not collider.is_in_group("Reflectors") and not collider.is_reflector():
 			break
 		
 		var normal = raycast.get_collision_normal()

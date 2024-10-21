@@ -1,7 +1,11 @@
-res://scenes/beam.tscn
-res://scripts/beam.gd
 res://scenes/main.tscn
-res://scenes/reflector.tscn
 res://scenes/player.tscn
+res://scenes/beam.tscn
 res://scenes/boundaries.tscn
+res://scenes/reflector.tscn
 res://scenes/wheel.tscn
+res://scenes/wall.tscn
+res://scenes/end_prism.tscn
+res://scenes/light.tscn
+res://scenes/pole.tscn
+res://scenes/pole.gd

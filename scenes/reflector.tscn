@@ -1,20 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2qispohwt3tc"]
+[gd_scene load_steps=6 format=3 uid="uid://c2qispohwt3tc"]
 
 [ext_resource type="Texture2D" uid="uid://b56p77qjb7rtj" path="res://assets/Terrain_Tileset_Assetpack/Minerals.png" id="1_3dmu2"]
 [ext_resource type="Script" path="res://scripts/reflector.gd" id="1_c8ob4"]
+[ext_resource type="PackedScene" uid="uid://btejccf2bjkbp" path="res://scenes/boundaries.tscn" id="2_6ewrb"]
+[ext_resource type="PackedScene" uid="uid://ddfhpqjy500bv" path="res://scenes/pole.tscn" id="4_al46b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mj73i"]
-size = Vector2(8, 2)
+size = Vector2(8, 1)
 
 [node name="Reflector" type="StaticBody2D" groups=["Reflectors"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_c8ob4")
 
+[node name="Boundaries" parent="." instance=ExtResource("2_6ewrb")]
+scale = Vector2(0.0943364, 0.38687)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.96046e-08, 0)
+position = Vector2(-0.5, -2.18556e-08)
 rotation = 1.5708
+scale = Vector2(0.947732, 0.999993)
 shape = SubResource("RectangleShape2D_mj73i")
+
+[node name="Pole" parent="." instance=ExtResource("4_al46b")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3dmu2")

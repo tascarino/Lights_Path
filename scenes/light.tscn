@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://btcbt4fhxfbmt"]
+
+[ext_resource type="Texture2D" uid="uid://dfmemi8g42ym7" path="res://assets/WizardSpriteSheet.png" id="1_7cd1x"]
+[ext_resource type="Script" path="res://scripts/light.gd" id="1_677cn"]
+
+[node name="Light" type="Node2D"]
+script = ExtResource("1_677cn")
+
+[node name="LightOff" type="Sprite2D" parent="."]
+texture = ExtResource("1_7cd1x")
+region_enabled = true
+region_rect = Rect2(171, 204, 9, 10)
+
+[node name="LightOn" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_7cd1x")
+region_enabled = true
+region_rect = Rect2(198, 199, 19, 20)
