@@ -1,8 +1,12 @@
-### 2024-10-18 - TBD: Figured out reflection
+### 2024-10-21 - TBD: Puzzle Completion Indicator and Wheel Implementation
+* Created "Wall" and "EndPrism" scenes
+* "Installed" a light in the main level that lights up upon the beam hitting the end prism
+  
+### 2024-10-18 - 2hr: Figured out reflection
 * Scrapped original beam script, trying out another [tutorial](https://www.youtube.com/watch?v=Mgk5eAvzo8k) that seems as though it will produce better results for what I'm working toward
 * Only issue: tutorial is from 3 years ago, meaning the code will vary between versions
 * Reflection is implemented and working; may change "prisms" to "mirrors" for the time being
-* Beginning to work on "wheel" implementation, way to turn the reflectors
+* Beginning to work on "wheel" implementation, way to turn the reflectors, and the indicator for level completion
 
 ### 2024-10-15 - 5hr: Continuing Reflection Config
 * Continuing work from last log
