@@ -1,4 +1,4 @@
-## 2024-10-25 - 5hr: Wheel Scrapped/Working on Rotations
+### 2024-10-25 - 5hr: Wheel Scrapped/Working on Rotations
 * Scrapped the wheel concept; replaced with "pole" on the back of mirrors that the player can use to turn it
 * Running into a roadblock with figuring out how to rotate the mirrors
 
