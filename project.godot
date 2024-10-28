@@ -23,6 +23,9 @@ window/stretch/mode="viewport"
 
 Reflectors=""
 EndPrism=""
+Poles=""
+Player=""
+Mirror=""
 
 [input]
 

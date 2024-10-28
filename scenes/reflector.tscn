@@ -3,28 +3,59 @@
 [ext_resource type="Texture2D" uid="uid://b56p77qjb7rtj" path="res://assets/Terrain_Tileset_Assetpack/Minerals.png" id="1_3dmu2"]
 [ext_resource type="Script" path="res://scripts/reflector.gd" id="1_c8ob4"]
 [ext_resource type="PackedScene" uid="uid://btejccf2bjkbp" path="res://scenes/boundaries.tscn" id="2_6ewrb"]
-[ext_resource type="PackedScene" uid="uid://ddfhpqjy500bv" path="res://scenes/pole.tscn" id="4_al46b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj73i"]
-size = Vector2(8, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txqi3"]
+size = Vector2(1, 6)
 
-[node name="Reflector" type="StaticBody2D" groups=["Reflectors"]]
-collision_layer = 3
-collision_mask = 3
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6it5q"]
+size = Vector2(4, 2)
+
+[node name="Reflector" type="RigidBody2D" groups=["Reflectors"]]
+disable_mode = 2
+collision_layer = 4
+collision_mask = 7
+inertia = 1.0
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 4
 script = ExtResource("1_c8ob4")
 
-[node name="Boundaries" parent="." instance=ExtResource("2_6ewrb")]
-scale = Vector2(0.0943364, 0.38687)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -2.18556e-08)
-rotation = 1.5708
-scale = Vector2(0.947732, 0.999993)
-shape = SubResource("RectangleShape2D_mj73i")
-
-[node name="Pole" parent="." instance=ExtResource("4_al46b")]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 0)
 texture = ExtResource("1_3dmu2")
 region_enabled = true
-region_rect = Rect2(75, 24, 2, 8)
+region_rect = Rect2(72, 32, 8, 8)
+
+[node name="Mirror" type="CollisionShape2D" parent="." groups=["Mirror"]]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_txqi3")
+
+[node name="Boundaries" parent="." instance=ExtResource("2_6ewrb")]
+position = Vector2(2, 0)
+rotation = 3.14159
+scale = Vector2(0.0994447, -0.399374)
+
+[node name="Boundaries4" parent="." instance=ExtResource("2_6ewrb")]
+position = Vector2(0.494001, 3.498)
+rotation = 3.14159
+scale = Vector2(0.0483219, -0.0493004)
+
+[node name="Boundaries3" parent="." instance=ExtResource("2_6ewrb")]
+position = Vector2(0.494001, -3.502)
+rotation = 3.14159
+scale = Vector2(0.0483219, -0.0493004)
+
+[node name="HandleCollision" parent="." instance=ExtResource("2_6ewrb")]
+position = Vector2(5, 0)
+rotation = -3.14159
+scale = Vector2(0.201987, -0.0913348)
+
+[node name="HandleArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandleArea"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_6it5q")
+
+[connection signal="body_entered" from="HandleArea" to="." method="_on_handle_body_entered"]
+[connection signal="body_exited" from="HandleArea" to="." method="_on_handle_area_body_exited"]

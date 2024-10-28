@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+const SPEED = 65.0
+var push_force = 80.0
 
 @onready var sprite = $AnimatedSprite2D  # Reference to AnimatedSprite2D node
 
 func is_reflector():
 	return false
+	
 
 func _physics_process(_delta):
 	var xInput = Input.get_axis("left", "right")
@@ -51,3 +53,5 @@ func _physics_process(_delta):
 			sprite.play("idle_left")
 
 	move_and_slide()
+	
+	 
