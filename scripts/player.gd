@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 65.0
+const SPEED = 55.0
 var push_force = 80.0
 
 @onready var sprite = $AnimatedSprite2D  # Reference to AnimatedSprite2D node

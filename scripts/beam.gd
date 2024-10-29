@@ -4,6 +4,8 @@ var max_bounces = 10
 
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var line: Line2D = $Line2D
+@onready var ccw: Area2D = $Counterclockwise/Ccw
+@onready var cw: Area2D = $Clockwise/Cw
 
 func level_complete():
 	var collider = raycast.get_collider()

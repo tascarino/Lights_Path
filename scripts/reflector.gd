@@ -1,39 +1,42 @@
 extends RigidBody2D
 
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-
-var colliding
-var clockwise
-var counterclockwise
+var collidingleft
+var collidingright
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	colliding = false
+	collidingleft = false
+	collidingright = false
 
 	
 func is_reflector():
 	return true
 
 func _physics_process(delta: float) -> void:
-	if colliding:
-		rotate(1 * delta)
+	if collidingleft:
+		rotate(.75 * delta)
+	if collidingright:
+		rotate(-.75 * delta)
 
-func _on_handle_body_entered(body: Node) -> void:
+func _on_handle_area_left_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		print("colliding")
-		colliding = true
-		# Calculate direction based on relative position between pole and body
-		#var direction = (body.global_position - global_position).normalized()
+		collidingleft = true
+		collidingright = false
 		
-		# Rotate clockwise if the collision is from the left
-		#if direction.x < 0:
-		#	apply_torque(300)
-		#else:
-		#	apply_torque(-300)
-			
-
-
-func _on_handle_area_body_exited(body: Node2D) -> void:
+func _on_handle_area_left_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		print("stopped colliding")
-		colliding = false
+		collidingleft = false
+
+func _on_handle_area_right_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		print("colliding")
+		collidingright = true
+		collidingleft = false
+
+
+func _on_handle_area_right_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		print("stopped colliding")
+		collidingright = false

@@ -8,3 +8,6 @@ res://scenes/wall.tscn
 res://scenes/end_prism.tscn
 res://scenes/light.tscn
 res://scenes/pole.tscn
+res://scenes/handle.tscn
+res://scripts/beam.gd
+res://scripts/player.gd

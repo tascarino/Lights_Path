@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2qispohwt3tc"]
+[gd_scene load_steps=7 format=3 uid="uid://c2qispohwt3tc"]
 
 [ext_resource type="Texture2D" uid="uid://b56p77qjb7rtj" path="res://assets/Terrain_Tileset_Assetpack/Minerals.png" id="1_3dmu2"]
 [ext_resource type="Script" path="res://scripts/reflector.gd" id="1_c8ob4"]
 [ext_resource type="PackedScene" uid="uid://btejccf2bjkbp" path="res://scenes/boundaries.tscn" id="2_6ewrb"]
+[ext_resource type="PackedScene" uid="uid://x5jv5dhhwtmf" path="res://scenes/handle.tscn" id="4_ksdxf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txqi3"]
 size = Vector2(1, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6it5q"]
-size = Vector2(4, 2)
+size = Vector2(4.01213, 0.992563)
 
 [node name="Reflector" type="RigidBody2D" groups=["Reflectors"]]
 disable_mode = 2
@@ -51,11 +52,17 @@ position = Vector2(5, 0)
 rotation = -3.14159
 scale = Vector2(0.201987, -0.0913348)
 
-[node name="HandleArea" type="Area2D" parent="."]
+[node name="HandleAreaRight" parent="." instance=ExtResource("4_ksdxf")]
+position = Vector2(-0.111487, 0.483115)
+scale = Vector2(1.03164, 0.500767)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HandleArea"]
-position = Vector2(5, 0)
+[node name="HandleAreaLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandleAreaLeft"]
+position = Vector2(5.00606, -0.503719)
 shape = SubResource("RectangleShape2D_6it5q")
 
-[connection signal="body_entered" from="HandleArea" to="." method="_on_handle_body_entered"]
-[connection signal="body_exited" from="HandleArea" to="." method="_on_handle_area_body_exited"]
+[connection signal="body_entered" from="HandleAreaRight" to="." method="_on_handle_area_right_entered"]
+[connection signal="body_exited" from="HandleAreaRight" to="." method="_on_handle_area_right_exited"]
+[connection signal="body_entered" from="HandleAreaLeft" to="." method="_on_handle_area_left_entered"]
+[connection signal="body_exited" from="HandleAreaLeft" to="." method="_on_handle_area_left_exited"]
