@@ -1,3 +1,9 @@
+### 2024-10-29 - 2hr: Rotation working in both directions
+* Configured the rotating mirrors in both direction; slightly wonky but is working (something to attend to in polishing)
+
+### 2024-10-28 - 3hr: Rotation Implemeted in Clockwise Direction
+* Got the mirrors rotating in one direction (clockwise)
+
 ### 2024-10-25 - 5hr: Wheel Scrapped/Working on Rotations
 * Scrapped the wheel concept; replaced with "pole" on the back of mirrors that the player can use to turn it
 * Running into a roadblock with figuring out how to rotate the mirrors
