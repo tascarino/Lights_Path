@@ -1,3 +1,18 @@
+### 2024-11-08 - 1hr: Poster Work
+* Began creating poster for demo day
+* Began working on graphic for the game, as if it were on the cover of a physical copy of the game; planning on putting the graphic on the demo day poster
+* 
+### 2024-11-05 - 2.8hr: Polishing/Level Design
+* Made a temporarily un-textured door that "opens" on level completion
+* Ran into issue; Area2D was not showing up/working in game.
+* Issue resolved: needed to update the main scene to run on game start; updated the name of a file, which for some reason made a duplicate, so I was working in the wrong file
+* Made door lead to an area2d that opens the "Level2" scene
+  
+### 2024-11-01 - 3hr: Polishing Begin
+* More work on graphics continued
+* Adjusted character and mirror rotation speed
+* Began thinking about ideas for 2 extra levels
+  
 ### 2024-10-29 - 2hr: Rotation working in both directions
 * Configured the rotating mirrors in both direction; slightly wonky but is working (something to attend to in polishing)
 
