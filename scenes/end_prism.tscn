@@ -1,21 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6grkd5xq46d5"]
+[gd_scene load_steps=3 format=3 uid="uid://c6grkd5xq46d5"]
 
 [ext_resource type="Script" path="res://scripts/end_prism.gd" id="1_n0fsp"]
-[ext_resource type="Texture2D" uid="uid://b56p77qjb7rtj" path="res://assets/Terrain_Tileset_Assetpack/Minerals.png" id="1_nq0nw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xt0ua"]
-size = Vector2(4.78503, 4.78503)
+[ext_resource type="Texture2D" uid="uid://dfmemi8g42ym7" path="res://assets/WizardSpriteSheet.png" id="2_snxnp"]
 
 [node name="EndPrism" type="StaticBody2D" groups=["EndPrism"]]
 position = Vector2(1, -7)
 scale = Vector2(1.67188, 1.67188)
 script = ExtResource("1_n0fsp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.598129, 0.598129)
-shape = SubResource("RectangleShape2D_xt0ua")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.155035, -1.73678)
+scale = Vector2(1.31915, 1.31915)
+polygon = PackedVector2Array(-7.77568, 4.1869, -7.84274, -10.4694, -4.24179, -10.6028, -4.06397, -15.0039, -0.107367, -18.7382, 3.93815, -14.9595, 3.9826, -10.7806, 9.93973, -10.7806, 8.97193, -6.57942, 7.77568, -4.78503, 7.77568, -2.99064, 11.3645, -3.58877, 9.57006, 4.76837e-07, 9.57006, 4.1869)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_nq0nw")
+position = Vector2(0.4001, -17.8501)
+texture = ExtResource("2_snxnp")
 region_enabled = true
-region_rect = Rect2(73, 16, 7, 8)
+region_rect = Rect2(130, 245, 41, 44)

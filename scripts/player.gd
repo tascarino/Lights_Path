@@ -5,8 +5,6 @@ var push_force = 80.0
 
 @onready var sprite = $AnimatedSprite2D  # Reference to AnimatedSprite2D node
 
-func is_reflector():
-	return false
 	
 
 func _physics_process(_delta):

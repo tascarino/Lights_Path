@@ -1,11 +1,10 @@
 extends Node2D
 
 var max_bounces = 10
+var rotation_speed = 1.0
 
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var line: Line2D = $Line2D
-@onready var ccw: Area2D = $Counterclockwise/Ccw
-@onready var cw: Area2D = $Clockwise/Cw
 
 func level_complete():
 	var collider = raycast.get_collider()
@@ -19,7 +18,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	line.clear_points()
 
 	line.add_point(Vector2.ZERO)
@@ -31,6 +30,11 @@ func _process(_delta: float) -> void:
 	
 	var previous = null 
 	var bounces = 0
+	
+	#if Input.get_axis:
+		#rotate(rotation_speed * delta)
+	#if Input.action_press("BeamRotateCounterClockwise"):
+		#rotate(rotation_speed * delta)
 	
 	while true:
 		if not raycast.is_colliding():
@@ -44,7 +48,7 @@ func _process(_delta: float) -> void:
 		
 		line.add_point(line.to_local(point))
 		
-		if not collider.is_in_group("Reflectors") and not collider.is_reflector():
+		if not collider.is_in_group("Reflectors"):
 			break
 		
 		var normal = raycast.get_collision_normal()
