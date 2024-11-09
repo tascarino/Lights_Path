@@ -1,3 +1,7 @@
+### 2024-11-09 - 1.8hr: Level Design
+* Created two extra levels, all seemingly working correctly (will test with playtesters)
+* Third level slightly larger in size
+  
 ### 2024-11-08 - 1hr: Poster Work
 * Began creating poster for demo day
 * Began working on graphic for the game, as if it were on the cover of a physical copy of the game; planning on putting the graphic on the demo day poster
