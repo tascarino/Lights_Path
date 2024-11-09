@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://x5jv5dhhwtmf" path="res://scenes/handle.tscn" id="4_ksdxf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txqi3"]
-size = Vector2(1, 6)
+size = Vector2(0.986843, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6it5q"]
 size = Vector2(4.01213, 0.992563)
@@ -29,7 +29,7 @@ region_enabled = true
 region_rect = Rect2(72, 32, 8, 8)
 
 [node name="Mirror" type="CollisionShape2D" parent="." groups=["Mirror"]]
-position = Vector2(0.5, 0)
+position = Vector2(0.493422, 0)
 shape = SubResource("RectangleShape2D_txqi3")
 
 [node name="Boundaries" parent="." instance=ExtResource("2_6ewrb")]

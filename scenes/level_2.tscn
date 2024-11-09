@@ -1,12 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://dp1kl36gkhc0x"]
+[gd_scene load_steps=15 format=3 uid="uid://dp1kl36gkhc0x"]
 
 [ext_resource type="Texture2D" uid="uid://dgqrs1w7trwol" path="res://assets/Terrain_Tileset_Assetpack/Stone.png" id="1_0gqns"]
+[ext_resource type="Script" path="res://scripts/level_2.gd" id="1_cph3g"]
 [ext_resource type="PackedScene" uid="uid://d3f3xuu2d2wkg" path="res://scenes/player.tscn" id="2_qctch"]
 [ext_resource type="PackedScene" uid="uid://btcbt4fhxfbmt" path="res://scenes/light.tscn" id="3_c3apq"]
 [ext_resource type="PackedScene" uid="uid://bkeyrb3e51ulc" path="res://scenes/door.tscn" id="4_mxcfc"]
 [ext_resource type="PackedScene" uid="uid://btejccf2bjkbp" path="res://scenes/boundaries.tscn" id="5_veeab"]
+[ext_resource type="PackedScene" uid="uid://c2qispohwt3tc" path="res://scenes/reflector.tscn" id="6_twut3"]
+[ext_resource type="PackedScene" uid="uid://divsf3mc1rjvf" path="res://scenes/wall.tscn" id="7_7shdo"]
+[ext_resource type="PackedScene" uid="uid://c6grkd5xq46d5" path="res://scenes/end_prism.tscn" id="8_sg4aa"]
+[ext_resource type="PackedScene" uid="uid://bkfbws3s8oket" path="res://scenes/beam.tscn" id="9_ix7f3"]
+[ext_resource type="Texture2D" uid="uid://dfmemi8g42ym7" path="res://assets/WizardSpriteSheet.png" id="10_v8c4i"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0btiv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c26kr"]
 texture = ExtResource("1_0gqns")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
@@ -113,11 +119,12 @@ texture_region_size = Vector2i(8, 8)
 [sub_resource type="TileSet" id="TileSet_rbyxk"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_0btiv")
+sources/0 = SubResource("TileSetAtlasSource_c26kr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0myq5"]
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_cph3g")
 
 [node name="LevelBasics" type="Node" parent="."]
 
@@ -169,3 +176,35 @@ scale = Vector2(6.39036, -0.788266)
 [node name="BottomBoundary" parent="RoomBoundaries" instance=ExtResource("5_veeab")]
 position = Vector2(3, 68)
 scale = Vector2(6.8, 0.4)
+
+[node name="Reflector" parent="." instance=ExtResource("6_twut3")]
+position = Vector2(-37, -49)
+rotation = 1.19103
+scale = Vector2(2.205, 2.205)
+
+[node name="Wall" parent="." instance=ExtResource("7_7shdo")]
+position = Vector2(-29, -3)
+rotation = 1.5708
+
+[node name="Wall3" parent="." instance=ExtResource("7_7shdo")]
+position = Vector2(6, -31)
+
+[node name="Wall4" parent="." instance=ExtResource("7_7shdo")]
+position = Vector2(38, -31)
+
+[node name="EndPrism" parent="." instance=ExtResource("8_sg4aa")]
+position = Vector2(38, -43)
+scale = Vector2(0.579, 0.579)
+
+[node name="Beam" parent="." instance=ExtResource("9_ix7f3")]
+position = Vector2(36.0467, 35.4363)
+scale = Vector2(0.328415, 0.328415)
+
+[node name="StartPrism" type="Sprite2D" parent="."]
+position = Vector2(38.2162, 29.5393)
+scale = Vector2(0.576014, 0.596204)
+texture = ExtResource("10_v8c4i")
+region_enabled = true
+region_rect = Rect2(130, 192, 32, 32)
+
+[connection signal="body_entered" from="LevelBasics/Exit" to="." method="_on_exit_body_entered"]
