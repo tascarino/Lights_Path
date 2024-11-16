@@ -1,3 +1,12 @@
+### 2023-11-15 - 3.5hr: Graphics Update cont
+* Created new graphics for title and end screen
+* Changed game name from "Puzzle Wiz" to "Light's Path"
+
+### 2024-11-12 - 2.7hr: Graphics Update
+* Re-textured the tilemap
+* Created animation for door open on level completion and close on level enter
+* Added glow effect to the light beam, title screen, and end screen
+
 ### 2024-11-09 - 1.8hr: Level Design
 * Created two extra levels, all seemingly working correctly (will test with playtesters)
 * Third level slightly larger in size
