@@ -3,6 +3,7 @@ extends Node2D
 var max_bounces = 10
 var rotation_speed = 1.0
 
+@onready var beam: Node2D = $"."
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var line: Line2D = $Line2D
 
@@ -31,10 +32,10 @@ func _process(delta: float) -> void:
 	var previous = null 
 	var bounces = 0
 	
-	#if Input.get_axis:
-		#rotate(rotation_speed * delta)
-	#if Input.action_press("BeamRotateCounterClockwise"):
-		#rotate(rotation_speed * delta)
+	#if Input.is_action_just_pressed("BeamRotateClockwise"):
+		#beam.rotate(rotation_speed * delta)
+	#if Input.is_action_just_pressed("BeamRotateCounterClockwise"):
+		#beam.rotate(-rotation_speed * delta)
 	
 	while true:
 		if not raycast.is_colliding():

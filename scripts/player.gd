@@ -2,15 +2,17 @@ extends CharacterBody2D
 
 const SPEED = 55.0
 var push_force = 80.0
+var is_moving = false
 
 @onready var sprite = $AnimatedSprite2D  # Reference to AnimatedSprite2D node
 
-	
+func in_movement():
+	return is_moving
 
 func _physics_process(_delta):
 	var xInput = Input.get_axis("left", "right")
 	var yInput = Input.get_axis("up", "down")
-	var is_moving = false
+	is_moving = false
 
 	# Movement logic
 	if xInput:

@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkfbws3s8oket"]
+[gd_scene load_steps=5 format=3 uid="uid://bkfbws3s8oket"]
 
 [ext_resource type="Script" path="res://scripts/beam.gd" id="1_v4nbm"]
-[ext_resource type="Texture2D" uid="uid://psytmb6jastj" path="res://icon.svg" id="1_xfdgh"]
+[ext_resource type="Texture2D" uid="uid://bmcteobucnyse" path="res://assets/Light.png" id="2_wj51q"]
+
+[sub_resource type="Environment" id="Environment_h7uol"]
+background_mode = 3
+background_energy_multiplier = 0.0
+glow_enabled = true
+glow_intensity = 1.15
+glow_hdr_threshold = 0.0
+glow_hdr_scale = 1.71
+glow_hdr_luminance_cap = 37.65
+
+[sub_resource type="Gradient" id="Gradient_pxc6m"]
+colors = PackedColorArray(1, 0.968627, 0.921569, 1, 1, 1, 1, 1)
 
 [node name="Beam" type="Node2D"]
 script = ExtResource("1_v4nbm")
@@ -9,14 +21,18 @@ script = ExtResource("1_v4nbm")
 [node name="Reference" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(0.29835, 0.29835)
-texture = ExtResource("1_xfdgh")
+texture = ExtResource("2_wj51q")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(63, 0)
 collision_mask = 7
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h7uol")
+
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 58, 0)
-default_color = Color(0.785864, 0.861808, 0.984442, 1)
+default_color = Color(1, 0.968627, 0.921569, 1)
+gradient = SubResource("Gradient_pxc6m")
 joint_mode = 1
 end_cap_mode = 2

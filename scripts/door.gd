@@ -1,5 +1,8 @@
 extends AnimatedSprite2D
 
+@onready var door: AnimatedSprite2D = $"."
+var complete = false
+
 @onready var static_body_2d: StaticBody2D = $StaticBody2D
 @onready var collision_shape_2d: CollisionShape2D = $StaticBody2D/CollisionShape2D
 
@@ -10,6 +13,9 @@ func _ready() -> void:
 func level_end():
 	static_body_2d.visible = false
 	collision_shape_2d.disabled = true
+	if !complete:
+		door.play("disappear")
+		complete = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

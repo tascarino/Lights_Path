@@ -1,17 +1,9 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
-
 config_version=5
 
 [application]
 
-config/name="Puzzle Wiz"
-run/main_scene="res://scenes/level_2.tscn"
+config/name="Light's Path"
+run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -68,3 +60,5 @@ BeamRotateCounterClockwise={
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.109804, 0.105882, 0.184314, 1)
+viewport/hdr_2d=true

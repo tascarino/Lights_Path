@@ -3,11 +3,11 @@ extends Node2D
 @onready var beam: Node2D = $Beam
 @onready var light: Node2D = $Light
 @onready var door: AnimatedSprite2D = $Door
+@onready var entrance: AnimatedSprite2D = $Entrance
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#get_tree().debug_collisions_hint = true
-	pass
+	entrance.play("default")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

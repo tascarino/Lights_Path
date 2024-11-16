@@ -1,14 +1,95 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkeyrb3e51ulc"]
+[gd_scene load_steps=13 format=3 uid="uid://bkeyrb3e51ulc"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_cfwlw"]
+[ext_resource type="Texture2D" uid="uid://dfmemi8g42ym7" path="res://assets/WizardSpriteSheet.png" id="1_jlgef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4cwf"]
+atlas = ExtResource("1_jlgef")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4m57"]
+atlas = ExtResource("1_jlgef")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rql01"]
+atlas = ExtResource("1_jlgef")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j770j"]
+atlas = ExtResource("1_jlgef")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esdyu"]
+atlas = ExtResource("1_jlgef")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg0mm"]
+atlas = ExtResource("1_jlgef")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88ouw"]
+atlas = ExtResource("1_jlgef")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ci8n"]
+atlas = ExtResource("1_jlgef")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32gcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4cwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4m57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4m57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rql01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j770j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esdyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg0mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88ouw")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ci8n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxfq2"]
 size = Vector2(8, 20)
 
 [node name="Door" type="AnimatedSprite2D"]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_32gcf")
+animation = &"disappear"
+autoplay = "idle"
 script = ExtResource("1_cfwlw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 3)
 shape = SubResource("RectangleShape2D_uxfq2")
