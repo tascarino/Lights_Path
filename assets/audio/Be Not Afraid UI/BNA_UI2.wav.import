@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dac3f3vq4aupb"
+path="res://.godot/imported/BNA_UI2.wav-a9f5b46ecdd069dc4900791181ed2a9c.sample"
+
+[deps]
+
+source_file="res://assets/audio/Be Not Afraid UI/BNA_UI2.wav"
+dest_files=["res://.godot/imported/BNA_UI2.wav-a9f5b46ecdd069dc4900791181ed2a9c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

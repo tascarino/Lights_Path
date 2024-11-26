@@ -1,3 +1,4 @@
+AudioStreamPlayer2D
 AnimationPlayer
 ColorRect
 CanvasLayer
@@ -11,5 +12,3 @@ CollisionPolygon2D
 Node
 CollisionShape2D
 Area2D
-StaticBody2D
-RigidBody2D
