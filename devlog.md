@@ -1,3 +1,6 @@
+### 2023-11-22 - 2.3hr: Music added
+* Simple background music added
+
 ### 2023-11-15 - 3.5hr: Graphics Update cont
 * Created new graphics for title and end screen
 * Changed game name from "Puzzle Wiz" to "Light's Path"
